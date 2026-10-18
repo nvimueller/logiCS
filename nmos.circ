@@ -1,0 +1,18 @@
+.include models/90nm.pm
+
+.param volt = 1.0
+.param nw = 180n
+.param nl = 90n
+
+vdrain drain 0 {volt}
+vgate gate 0 {volt}
+vsrc src 0 0
+vbulk bulk 0 0
+
+mn drain gate src bulk nmos l={nl} w={nw}
+
+.control
+    dc vdrain 0 1 0.001 vgate 0 1 0.1
+    plot i(vsrc)
+.endc
+.end
