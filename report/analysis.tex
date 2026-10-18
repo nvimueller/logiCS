@@ -19,20 +19,16 @@
 
 \newpage
 
-\fontsize{12}{15}\selectfont\noindent\textbf{RESULTS}
-
 \begin{multicols}{2}
     \noindent\textbf{NMOS ANALYSIS}\\
     \includegraphics[width=0.5\textwidth]{vdsnmos} 
     \includegraphics[width=0.5\textwidth]{vgsnmos} 
-    \noindent\textbf{OBSERVATIONS}\\
-    \noindent 
-
     \noindent\textbf{PMOS ANALYSIS}\\
     \includegraphics[width=0.5\textwidth]{vdspmos} 
     \includegraphics[width=0.5\textwidth]{vgspmos} 
-    \noindent\textbf{OBSERVATIONS}\\
-    \noindent 
 \end{multicols}
+
+\noindent\textbf{OBSERVATIONS}\\
+\noindent The maximum current conducted by the NMOS transistor was six orders of magnitude ($10^6$) higher than that of the PMOS transistor. Furthermore, the NMOS starting current was slightly above zero, while the PMOS current dropped to actual zero at the end of its sweep -- a curious disparity. This difference at the voltage limits is currently unexplained, although simulation imprecision may be a factor. Ultimately, increasing the PMOS width ratio to compensate for its lower conductance proved insufficient, since a significant difference between the two models persists.
 
 \end{document}
