@@ -12,7 +12,10 @@ vbulk bulk 0 0
 mn drain gate src bulk nmos l={nl} w={nw}
 
 .control
-    dc vdrain 0 1 0.001 vgate 0 1 0.1
+    dc vdrain 0 1 0.001 vgate 0 1 0.1           * vds x ids
     plot i(vsrc)
+    dc vgate 0 1 0.01                           * vgs x ids
+    plot i(vsrc) 
 .endc
+
 .end
