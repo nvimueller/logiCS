@@ -13,9 +13,11 @@ mp drain gate src bulk nmos l={pl} w={pw}
 
 .control
     dc vdrain 0 1 0.001 vgate 0 1 0.1
-    plot i(vsrc)
+    plot -i(vsrc)
+    * gnuplot vdspmos -i(vsrc) title "vds x ids" xlabel "vds (V)" ylabel "ids (A)"
     dc vgate 0 1 0.01
-    plot i(vsrc) 
+    plot -i(vsrc) 
+    * gnuplot vgspmos -i(vsrc) title "vgs x ids" xlabel "vgs (V)" ylabel "ids (A)"
 .endc
 
 .end
