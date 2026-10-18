@@ -1,0 +1,21 @@
+.include models/90nm.pm
+
+.param volt = 1.0
+.param pw = 360n
+.param pl = 90n
+
+vdrain drain 0 {volt}
+vgate gate 0 {volt}
+vsrc src 0 {volt}
+vbulk bulk 0 {volt}
+
+mp drain gate src bulk nmos l={pl} w={pw}
+
+.control
+    dc vdrain 0 1 0.001 vgate 0 1 0.1
+    plot i(vsrc)
+    dc vgate 0 1 0.01
+    plot i(vsrc) 
+.endc
+
+.end
