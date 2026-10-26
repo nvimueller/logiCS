@@ -4,12 +4,12 @@
 .param pw = 360n
 .param pl = 90n
 
-vdrain drain 0 {volt}
+vdrain drain 0 0
 vgate gate 0 {volt}
 vsrc src 0 {volt}
 vbulk bulk 0 {volt}
 
-mp drain gate src bulk nmos l={pl} w={pw}
+mp drain gate src bulk pmos l={pl} w={pw}
 
 .control
     dc vdrain 0 1 0.001 vgate 0 1 0.1
