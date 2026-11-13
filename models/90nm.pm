@@ -1,7 +1,3 @@
-* beta version released on 2/22/06
-
-* ptm 90nm nmos 
- 
 .model  nmos  nmos  level = 54
 
 +version = 4.0          binunit = 1            paramchk= 1            mobmod  = 0          
@@ -71,8 +67,6 @@
 +rshg    = 0.4          gbmin   = 1e-010       rbpb    = 5            rbpd    = 15         
 +rbps    = 15           rbdb    = 15           rbsb    = 15           ngcon   = 1          
 
-* ptm 90nm pmos
- 
 .model  pmos  pmos  level = 54
 
 +version = 4.0          binunit = 1            paramchk= 1            mobmod  = 0          
@@ -141,6 +135,3 @@
 
 +rshg    = 0.4          gbmin   = 1e-010       rbpb    = 5            rbpd    = 15         
 +rbps    = 15           rbdb    = 15           rbsb    = 15           ngcon   = 1          
-
-
-
