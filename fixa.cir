@@ -28,8 +28,8 @@ cload out 0 5f
     meas tran tplh_bhl trig v(gb) val=0.5 fall=1 targ v(out) val=0.5 rise=1 >/dev/null
     let tphl_blh = tphl_blh * 1e12
     let tplh_bhl = tplh_bhl * 1e12
-    echo "tphl_blh  = $&tphl_blh ns"
-    echo "tplh_bhl  = $&tplh_bhl ns"
+    echo "tphl_blh  = $&tphl_blh ps"
+    echo "tplh_bhl  = $&tplh_bhl ps"
 .endc
 
 .end
