@@ -1,0 +1,34 @@
+.include models/90nm.pm
+
+.param volt = 1.0
+.param pl   = 90n
+.param nl   = 90n
+.param pw   = 360n
+.param nw   = 180n
+
+vdd vdd gnd dc {volt}
+
+va ga gnd pulse(gnd {volt} 2n 10p 10p 2n 4n)
+vb gb gnd pulse(gnd {volt} 1n 10p 10p 1n 2n)
+
+.subckt nand2 a b out vdd vss
+    mpa out a vdd vdd pmos w={pw} l={pl}
+    mpb out b vdd vdd pmos w={pw} l={pl}
+
+    mna out a mid vss nmos w={nw} l={nl}
+    mnb mid b vss vss nmos w={nw} l={nl}
+.ends nand2
+
+xone ga gb out vdd gnd nand2
+cload out gnd 5f
+
+* ============================================================================
+* 4. simulation control
+* ============================================================================
+.tran 10p 5n
+.control
+  run
+  plot v(ga) v(gb)+1.5 v(out)+3.0
+.endc
+
+.end
